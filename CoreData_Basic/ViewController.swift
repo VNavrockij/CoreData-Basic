@@ -27,8 +27,8 @@ class ViewController: UIViewController {
         let managedObject = NSManagedObject(entity: entityDescription!, insertInto: context)
         
         // set attributes
-        managedObject.setValue("Vasya", forKey: "name")
-        managedObject.setValue(18, forKey: "age")
+        managedObject.setValue("Dima", forKey: "name")
+        managedObject.setValue(28, forKey: "age")
         
         // unwrap context value form attributes
         let name = managedObject.value(forKey: "name")
@@ -37,6 +37,17 @@ class ViewController: UIViewController {
         
         // saving data
         appDelegate.saveContext()
+        
+        // extract values from DataBase
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        do {
+            let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject] {
+                print("name - \(result.value(forKey: "name")!), age - \(result.value(forKey: "age")!)")
+            }
+        } catch {
+            print(error)
+        }
         
     }
 
