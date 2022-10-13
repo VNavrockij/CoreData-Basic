@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 //        guard let entityDescription = NSEntityDescription.entity(forEntityName: "Person", in: context) else { return }
         
         // create instance
-        let managedObject = Person(entity: CoreDataManager.instance.entityForName(entityName: "Person"), insertInto: CoreDataManager.instance.context)
+        let managedObject = Person()
         
         // set attributes
         managedObject.name = "Kolya"
