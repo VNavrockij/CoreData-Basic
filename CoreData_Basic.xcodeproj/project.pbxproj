@@ -10,6 +10,7 @@
 		FAB2235A28F827080092C168 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2235828F827080092C168 /* Person+CoreDataClass.swift */; };
 		FAB2235B28F827080092C168 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2235928F827080092C168 /* Person+CoreDataProperties.swift */; };
 		FAB2235E28F82E240092C168 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2235D28F82E240092C168 /* CoreDataManager.swift */; };
+		FAB2236328F84F620092C168 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2236228F84F620092C168 /* MyTableViewController.swift */; };
 		FAE8C99828F5A7870017F330 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C99728F5A7870017F330 /* AppDelegate.swift */; };
 		FAE8C99A28F5A7870017F330 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C99928F5A7870017F330 /* SceneDelegate.swift */; };
 		FAE8C99C28F5A7870017F330 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C99B28F5A7870017F330 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		FAB2235928F827080092C168 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FAB2235C28F82D5F0092C168 /* CoreData_Basic 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CoreData_Basic 2.xcdatamodel"; sourceTree = "<group>"; };
 		FAB2235D28F82E240092C168 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FAB2236228F84F620092C168 /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		FAE8C99428F5A7870017F330 /* CoreData_Basic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData_Basic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE8C99728F5A7870017F330 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE8C99928F5A7870017F330 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,15 +60,24 @@
 		FAB2236028F82E780092C168 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAB2235F28F82E420092C168 /* Entity */,
 				FAB2235D28F82E240092C168 /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FAB2236128F84D470092C168 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAE8C99728F5A7870017F330 /* AppDelegate.swift */,
+				FAE8C99928F5A7870017F330 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FAE8C98B28F5A7870017F330 = {
 			isa = PBXGroup;
 			children = (
-				FAB2235F28F82E420092C168 /* Entity */,
 				FAE8C99628F5A7870017F330 /* CoreData_Basic */,
 				FAE8C99528F5A7870017F330 /* Products */,
 			);
@@ -84,10 +95,10 @@
 			isa = PBXGroup;
 			children = (
 				FAB2236028F82E780092C168 /* Model */,
-				FAE8C99728F5A7870017F330 /* AppDelegate.swift */,
-				FAE8C99928F5A7870017F330 /* SceneDelegate.swift */,
+				FAB2236128F84D470092C168 /* Supporting Files */,
 				FAE8C99B28F5A7870017F330 /* ViewController.swift */,
 				FAE8C99D28F5A7870017F330 /* Main.storyboard */,
+				FAB2236228F84F620092C168 /* MyTableViewController.swift */,
 				FAE8C9A328F5A7880017F330 /* Assets.xcassets */,
 				FAE8C9A528F5A7880017F330 /* LaunchScreen.storyboard */,
 				FAE8C9A828F5A7880017F330 /* Info.plist */,
@@ -170,6 +181,7 @@
 				FAE8C99C28F5A7870017F330 /* ViewController.swift in Sources */,
 				FAE8C99828F5A7870017F330 /* AppDelegate.swift in Sources */,
 				FAB2235B28F827080092C168 /* Person+CoreDataProperties.swift in Sources */,
+				FAB2236328F84F620092C168 /* MyTableViewController.swift in Sources */,
 				FAB2235A28F827080092C168 /* Person+CoreDataClass.swift in Sources */,
 				FAE8C99A28F5A7870017F330 /* SceneDelegate.swift in Sources */,
 				FAB2235E28F82E240092C168 /* CoreDataManager.swift in Sources */,

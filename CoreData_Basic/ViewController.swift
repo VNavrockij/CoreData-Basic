@@ -27,8 +27,8 @@ class ViewController: UIViewController {
         let managedObject = Person()
         
         // set attributes
-        managedObject.name = "Kolya"
-        managedObject.age = 11
+        managedObject.name = "Vasya"
+        managedObject.age = 32
         
         // unwrap context value form attributes
         let name = managedObject.name
@@ -51,15 +51,15 @@ class ViewController: UIViewController {
         }
         
         // remove ALL data
-        do {
-            let results = try CoreDataManager.instance.context.fetch(fetchRequest)
-            for result in results as! [NSManagedObject] {
-                CoreDataManager.instance.context.delete(result)
-            }
-        } catch {
-            print(error)
-        }
-        
+//        do {
+//            let results = try CoreDataManager.instance.context.fetch(fetchRequest)
+//            for result in results as! [NSManagedObject] {
+//                CoreDataManager.instance.context.delete(result)
+//            }
+//        } catch {
+//            print(error)
+//        }
+//
 //        CoreDataManager.instance.saveContext()
         
         print("\(name) \(age)")
