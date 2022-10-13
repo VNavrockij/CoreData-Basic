@@ -21,18 +21,21 @@ class ViewController: UIViewController {
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         
         // describe the entity
-        let entityDescription = NSEntityDescription.entity(forEntityName: "Person", in: context)
+        guard let entityDescription = NSEntityDescription.entity(forEntityName: "Person", in: context) else { return }
         
         // create instance
-        let managedObject = NSManagedObject(entity: entityDescription!, insertInto: context)
+        //let managedObject = NSManagedObject(entity: entityDescription!, insertInto: context)
+        let managedObject = Person(entity: entityDescription, insertInto: context)
         
         // set attributes
-        managedObject.setValue("Dima", forKey: "name")
-        managedObject.setValue(28, forKey: "age")
+//        managedObject.setValue("Dima", forKey: "name")
+//        managedObject.setValue(28, forKey: "age")
+        managedObject.name = "Kolya"
+        managedObject.age = 11
         
         // unwrap context value form attributes
-        let name = managedObject.value(forKey: "name")
-        let age = managedObject.value(forKey: "age")
+        let name = managedObject.name
+        let age = managedObject.age
         print("\(name) \(age)")
         
         // saving data
@@ -42,14 +45,33 @@ class ViewController: UIViewController {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
         do {
             let results = try context.fetch(fetchRequest)
-            for result in results as! [NSManagedObject] {
-                print("name - \(result.value(forKey: "name")!), age - \(result.value(forKey: "age")!)")
+//            for result in results as! [NSManagedObject] {
+//                print("name - \(result.value(forKey: "name")!), age - \(result.value(forKey: "age")!)")
+//            }
+            for result in results as! [Person] {
+                print("name - \(result.name), age - \(result.age)")
             }
         } catch {
             print(error)
         }
         
+        // remove ALL data
+        do {
+            let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject] {
+                context.delete(result)
+            }
+        } catch {
+            print(error)
+        }
+        
+//        appDelegate.saveContext()
+        
+        print("\(name) \(age)")
+        
     }
+    
+    
 
 
 }

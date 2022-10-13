@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAB2235A28F827080092C168 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2235828F827080092C168 /* Person+CoreDataClass.swift */; };
+		FAB2235B28F827080092C168 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2235928F827080092C168 /* Person+CoreDataProperties.swift */; };
 		FAE8C99828F5A7870017F330 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C99728F5A7870017F330 /* AppDelegate.swift */; };
 		FAE8C99A28F5A7870017F330 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C99928F5A7870017F330 /* SceneDelegate.swift */; };
 		FAE8C99C28F5A7870017F330 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C99B28F5A7870017F330 /* ViewController.swift */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FAB2235828F827080092C168 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FAB2235928F827080092C168 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FAB2235C28F82D5F0092C168 /* CoreData_Basic 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CoreData_Basic 2.xcdatamodel"; sourceTree = "<group>"; };
 		FAE8C99428F5A7870017F330 /* CoreData_Basic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData_Basic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE8C99728F5A7870017F330 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE8C99928F5A7870017F330 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +47,8 @@
 		FAE8C98B28F5A7870017F330 = {
 			isa = PBXGroup;
 			children = (
+				FAB2235828F827080092C168 /* Person+CoreDataClass.swift */,
+				FAB2235928F827080092C168 /* Person+CoreDataProperties.swift */,
 				FAE8C99628F5A7870017F330 /* CoreData_Basic */,
 				FAE8C99528F5A7870017F330 /* Products */,
 			);
@@ -143,6 +150,8 @@
 			files = (
 				FAE8C99C28F5A7870017F330 /* ViewController.swift in Sources */,
 				FAE8C99828F5A7870017F330 /* AppDelegate.swift in Sources */,
+				FAB2235B28F827080092C168 /* Person+CoreDataProperties.swift in Sources */,
+				FAB2235A28F827080092C168 /* Person+CoreDataClass.swift in Sources */,
 				FAE8C99A28F5A7870017F330 /* SceneDelegate.swift in Sources */,
 				FAE8C9A228F5A7870017F330 /* CoreData_Basic.xcdatamodeld in Sources */,
 			);
@@ -367,6 +376,7 @@
 		FAE8C9A028F5A7870017F330 /* CoreData_Basic.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FAB2235C28F82D5F0092C168 /* CoreData_Basic 2.xcdatamodel */,
 				FAE8C9A128F5A7870017F330 /* CoreData_Basic.xcdatamodel */,
 			);
 			currentVersion = FAE8C9A128F5A7870017F330 /* CoreData_Basic.xcdatamodel */;
