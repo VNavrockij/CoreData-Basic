@@ -15,21 +15,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // reference to AppDelegate
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         // create context
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+//        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         
         // describe the entity
-        guard let entityDescription = NSEntityDescription.entity(forEntityName: "Person", in: context) else { return }
+//        guard let entityDescription = NSEntityDescription.entity(forEntityName: "Person", in: context) else { return }
         
         // create instance
-        //let managedObject = NSManagedObject(entity: entityDescription!, insertInto: context)
-        let managedObject = Person(entity: entityDescription, insertInto: context)
+        let managedObject = Person(entity: CoreDataManager.instance.entityForName(entityName: "Person"), insertInto: CoreDataManager.instance.context)
         
         // set attributes
-//        managedObject.setValue("Dima", forKey: "name")
-//        managedObject.setValue(28, forKey: "age")
         managedObject.name = "Kolya"
         managedObject.age = 11
         
@@ -39,15 +36,13 @@ class ViewController: UIViewController {
         print("\(name) \(age)")
         
         // saving data
-        appDelegate.saveContext()
+//        appDelegate.saveContext()
+        CoreDataManager.instance.saveContext()
         
         // extract values from DataBase
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
         do {
-            let results = try context.fetch(fetchRequest)
-//            for result in results as! [NSManagedObject] {
-//                print("name - \(result.value(forKey: "name")!), age - \(result.value(forKey: "age")!)")
-//            }
+            let results = try CoreDataManager.instance.context.fetch(fetchRequest)
             for result in results as! [Person] {
                 print("name - \(result.name), age - \(result.age)")
             }
@@ -57,15 +52,15 @@ class ViewController: UIViewController {
         
         // remove ALL data
         do {
-            let results = try context.fetch(fetchRequest)
+            let results = try CoreDataManager.instance.context.fetch(fetchRequest)
             for result in results as! [NSManagedObject] {
-                context.delete(result)
+                CoreDataManager.instance.context.delete(result)
             }
         } catch {
             print(error)
         }
         
-//        appDelegate.saveContext()
+//        CoreDataManager.instance.saveContext()
         
         print("\(name) \(age)")
         
