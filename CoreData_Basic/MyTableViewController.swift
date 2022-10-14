@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MyTableViewController: UITableViewController {
     
@@ -14,6 +15,16 @@ class MyTableViewController: UITableViewController {
         static let sortName = "name"
         static let cellName = "Cell"
     }
+    
+    var fetchResultController: NSFetchedResultsController<NSFetchRequestResult> = {
+        // request to recive
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.entity)
+        // for managering data need sorted data
+        let sortDescriptor = NSSortDescriptor(key: Constants.sortName, ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        let fetchRequestController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.instance.context, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchRequestController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
